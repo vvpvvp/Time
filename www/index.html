@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <title>Time</title>
+</head>
+
+<body>
+    <div class="loadding fullscream">
+        TIME
+    </div>
+    <div class="app fullscream">
+        <div class="list">
+            <div>
+                <div class="calarder">
+                    <div class="date">今天</div>
+                </div>
+                <div class="images empty add"><span class="icon-add-2"></span></div>
+                <div class="content">
+                    <div class="word"></div>
+                    <div class="desc"></div>
+                </div>
+            </div>
+            <!-- <div>
+                <div class="calarder">
+                    <span class="date">02</span>
+                    <span class="month">3月</span>
+                </div>
+                <div class="images empty"><div>空</div></div>
+                <div class="content">
+                    <div class="word">今天天气很好</div>
+                    <div class="desc">上海</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="calarder">
+                    <span class="date">01</span>
+                    <span class="month">3月</span>
+                </div>
+                <div class="images"><div class="img" style="background-image:url(img/icon.png)"></div></div>
+                <div class="content">
+                    <div class="word">今天天气很好</div>
+                    <div class="desc">上海</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="calarder">
+                </div>
+                <div class="images"><div class="img" style="background-image:url(img/icon.png)"></div></div>
+                <div class="content">
+                    <div class="word">今天天气很好</div>
+                    <div class="desc">上海</div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="create section fullscream">
+        <div class="banner"><span class="cancelCreate">取消</span><span class="create" id="send">发送</span></div>
+        <textarea name="content" id="" cols="30" rows="10" placeholder="这一刻的想法..."></textarea>
+        <div class="img-picker">
+            <div class="images empty takePicture"><div class="icon-plus2"></div></div>
+        </div>
+        <div class="location">
+            <span class="icon-location1"></span>
+            <span class="icon-chevron-thin-right"></span>
+            <div class="location-desc">正在加载地址</div>
+        </div>
+    </div>
+
+    <div class="locationSection section fullscream">
+        <div class="banner"><span class="cancelCreate">取消</span></div>
+        <div class="inputDiv">
+            <input type="text" />
+        </div>
+        <div class="listloadding">加载中</div>
+        <div class="locationList">
+        </div>
+    </div>
+    <div class="globalLoadding"></div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common/data.js"></script>
+    <script type="text/javascript" src="js/common/log.js"></script>
+    <script type="text/javascript" src="js/common/utils.js"></script>
+    <script type="text/javascript" src="js/common/moment.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/op.js"></script>
+    <script type="text/javascript" src="js/loc.js"></script>
+    <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script type="text/javascript">
+        if(typeof(cordova)!=="undefined"){
+            app.initialize();
+        }else{
+            app.receivedEvent();
+        }
+    </script>
+</body>
+
+</html>

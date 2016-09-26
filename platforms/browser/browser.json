@@ -1,0 +1,28 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.chun.Time"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-image-picker/www/imagepicker.js",
+            "id": "cordova-plugin-image-picker.ImagePicker",
+            "pluginId": "cordova-plugin-image-picker",
+            "clobbers": [
+                "plugins.imagePicker"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-image-picker": "1.1.1"
+    }
+}
