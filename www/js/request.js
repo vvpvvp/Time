@@ -66,6 +66,10 @@ var Request = {
         var ft = new FileTransfer();
         for (var i = srcs.length - 1; i >= 0; i--) {
             var src = srcs[i];
+            if(src.isPosed){
+                urls.push(src);
+                continue;
+            }
             var picUrl = src.src;
             var options = new FileUploadOptions();
             options.fileKey="file";

@@ -13,11 +13,13 @@ var Data = {
     save:function(param,callback){
         this.execute(param,"insert",callback);
     },
-    list:function(callback){
+    list:function(page,callback){
         var db = this.open();
         var _this = this;
+        var start = (page.pageNo-1)*page.pageSize;
+        var end = start + page.pageSize;
         db.transaction(function(tx){
-            tx.executeSql("select * from daily order by updateAt",[],function(tx,result){
+            tx.executeSql("select * from daily order by updateAt desc limit " +start+","+end,[],function(tx,result){
                 if(Utils.isFunction(callback)){
                     if(result.rows){
                         callback.call(null,_this.parse(result.rows));
@@ -28,6 +30,20 @@ var Data = {
     },
     update:function(param,callback){
         this.execute(param,"update",callback);
+    },
+    getUnPosed:function(callback){
+        var db = this.open();
+        var _this = this;
+        db.transaction(function(tx){
+            var now = (new Date()).getTime()-3*1000*60;
+            tx.executeSql("select * from daily where isPosed = 0 and updateAt <= "+now+" order by updateAt",[],function(tx,result){
+                if(Utils.isFunction(callback)){
+                    if(result.rows){
+                        callback.call(null,_this.parse(result.rows));
+                    }
+                }
+            });
+        });
     },
     updateStatus:function(data){
         var db = this.open();
@@ -47,7 +63,7 @@ var Data = {
     },
     parse:function(data){
         var list = [];
-        for (var i = data.length - 1; i >= 0; i--) {
+        for (var i = 0; i < data.length; i++) {
             var d = Utils.deepCopy(data.item(i));
             if(d.position){
                 try{

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3b1qve');
-  src:  url('fonts/icomoon.eot?3b1qve#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3b1qve') format('truetype'),
-    url('fonts/icomoon.woff?3b1qve') format('woff'),
-    url('fonts/icomoon.svg?3b1qve#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?6tx9hp');
+  src:  url('fonts/icomoon.eot?6tx9hp#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6tx9hp') format('truetype'),
+    url('fonts/icomoon.woff?6tx9hp') format('woff'),
+    url('fonts/icomoon.svg?6tx9hp#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,6 @@
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  text-transform: none;
   line-height: 1;
 
   /* Better Font Rendering =========== */
@@ -32,6 +31,21 @@
 }
 .icon-location1:before {
   content: "\e903";
+}
+.icon-loading1:before {
+  content: "\e907";
+}
+.icon-loading2:before {
+  content: "\e908";
+}
+.icon-loading3:before {
+  content: "\e909";
+}
+.icon-up:before {
+  content: "\e90a";
+}
+.icon-down:before {
+  content: "\e90b";
 }
 .icon-mic:before {
   content: "\e906";

@@ -7,13 +7,13 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Time</title>
 </head>
 
 <body>
-    <div class="loadding fullscream">
+    <div class="globalloadding fullscream">
         TIME
     </div>
     <!-- <div class="app fullscream">
@@ -65,18 +65,25 @@
                 </div>
             </div> -->
     <div class="app fullscream template">
-        <div class="list">
-            <div>
-                <div class="calarder">
-                    <div class="date">今天</div>
-                </div>
-                <div class="images empty add"><span class="icon-add-2"></span></div>
-                <div class="content">
-                    <div class="word"></div>
-                    <div class="desc"></div>
+        <div class="wrapper">
+            <div class="pullDown">
+                <span class="icon-loading1"></span>
+            </div>
+            <div class="list">
+                <div class="createButton">
+                    <div class="calarder">
+                        <div class="date">今天</div>
+                    </div>
+                    <div class="images empty add"><span class="icon-add-2"></span></div>
+                    <div class="content">
+                        <div class="word"></div>
+                        <div class="desc"></div>
+                    </div>
                 </div>
             </div>
-            
+            <div class="pullUp">
+                <span class="icon-loading1"></span>
+            </div>
         </div>
     </div>
     <div class="create section fullscream template">
@@ -113,6 +120,7 @@
     <script type="text/javascript" src="js/loc.js"></script>
     <script type="text/javascript" src="js/request.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/plugin/iscroll.js"></script>
     <script type='application/javascript' src='js/fastclick.js'></script>
     <script type="text/javascript">
         if(typeof(cordova)!=="undefined"){

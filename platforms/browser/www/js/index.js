@@ -10,27 +10,53 @@ var app = {
     },
     receivedEvent: function(id) {
         Data.init();
-        $(".loadding").hide();
-        $(".app").show();
-
+        $(".globalloadding").hide();
         FastClick.attach(document.body);
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
         MainPage.init();
     }
 };
 
 var MainPage = {
     content:null,
+    myScroll:null,
+    page:{},
     init:function(){
         this.content = $(".template.app").clone();
         this.content.removeClass("template")
         $("body").append(this.content);
-        this.refreshView();
         this.initEvents();
+        this.refreshView();
     },
     refreshView:function(){
         var _this = this;
-        $(".list>div",_this.content).not(":first").remove();
-        Data.list(function(data){
+        this.page = {
+            pageNo:0,
+            pageSize:10
+        }
+        $(".list>div",_this.content).not(".createButton").remove();
+        this.loadData();
+        this.setUnPosed();
+    },
+    setUnPosed(){
+        var _this = this;
+        Data.getUnPosed(function(data){
+            if(data.length>0){
+                var t = $("<div class='unPosedTip'>您有"+data.length+"条数据未同步，点击<span class='link'>同步</span></div>");
+                $("span",t).on("click",function(){
+                    for (var i = data.length - 1; i >= 0; i--) {
+                        Request.postData(data[i]);
+                    }
+                    t.remove();
+                });
+                $(".list",_this.content).prepend(t);
+            }
+        });
+    },
+    loadData(){
+        var _this = this;
+        this.page.pageNo++;
+        Data.list(this.page,function(data){
             var html = "";
             for (var i = 0; i < data.length; i++) {
                 var d = data[i];
@@ -44,12 +70,69 @@ var MainPage = {
                 html += '<div class="content"><div class="word">'+d.content+'</div><div class="desc">'+d.address+'</div></div></div>';
             }
             $(".list",_this.content).append(html);
+            $(".pullDown,.pullUp",this.content).removeClass("flip loading");
+            _this.myScroll.refresh();
         });
     },
     initEvents(){
         var _this = this;
         $(".empty.add",_this.content).on("click", function() {
             CreatePage.init();
+        });
+        var pullDownEl = $(".pullDown",this.content);
+        var pullUpEl = $(".pullUp",this.content);
+        this.myScroll = new iScroll(this.content[0], {
+            scrollbarClass: 'myScrollbar', /* 重要样式 */
+            useTransition: true, /* 此属性不知用意，本人从true改为false */
+            topOffset: 0,
+            onRefresh: function () {
+                // if (pullDownEl.className.match('loading')) {
+                //     pullDownEl.className = '';
+                //     pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+                // } else if (pullUpEl.className.match('loading')) {
+                //     pullUpEl.className = '';
+                //     pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+                // }
+            },
+            onScrollMove: function () {
+                // if (this.y > 5 && !pullDownEl.className.match('flip')) {
+                //     pullDownEl.className = 'flip';
+                //     pullDownEl.querySelector('.pullDownLabel').innerHTML = '松手开始更新...';
+                //     this.minScrollY = 0;
+                // } else if (this.y < 5 && pullDownEl.className.match('flip')) {
+                //     pullDownEl.className = '';
+                //     pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
+                //     this.minScrollY = -pullDownOffset;
+                // } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+                //     pullUpEl.className = 'flip';
+                //     pullUpEl.querySelector('.pullUpLabel').innerHTML = '松手开始更新...';
+                //     this.maxScrollY = this.maxScrollY;
+                // } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+                //     pullUpEl.className = '';
+                //     pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多...';
+                //     this.maxScrollY = pullUpOffset;
+                // }
+                if (this.y > 5 && !pullDownEl.hasClass('flip')) {
+                    pullDownEl.addClass("flip");
+                    this.minScrollY = 0;
+                }  else if (this.y < (this.maxScrollY - 5) && !pullUpEl.hasClass('flip')) {
+                    pullUpEl.addClass("flip");
+                    this.maxScrollY = this.maxScrollY;
+                }
+            },
+            onScrollEnd: function () {
+                if (pullDownEl.hasClass('flip')&&!pullDownEl.hasClass('loading')) {
+                    pullDownEl.addClass('loading');
+                    this.refresh();
+                    this.scrollTo(0,0,0);
+                    _this.refreshView();
+                } else if (pullUpEl.hasClass('flip')&&!pullUpEl.hasClass('loading')) {
+                    pullUpEl.addClass('loading'); 
+                    this.refresh();
+                    this.scrollTo(0,this.maxScrollY,0);
+                    _this.loadData();
+                }
+            }
         });
     }
 }

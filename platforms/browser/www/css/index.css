@@ -26,7 +26,7 @@ div{
     /* padding-top: 20px; */
 }
 
-.loadding{
+.globalloadding{
     font-size:80px;
     font-family:monospace;
     text-align:center;
@@ -36,9 +36,6 @@ div{
 }
 
 /* Portrait layout (default) */
-.app {
-    display:none;
-}
 
 /* Landscape layout (with min-width) */
 
@@ -53,8 +50,8 @@ h1 {
 
 
 .app .list {
-    padding: 0px 10px;
-    margin: 50px 0;
+    padding: 20px 10px 10px;
+    /* margin: 50px 0; */
 }
 
 .app .list>div {
@@ -312,4 +309,53 @@ input[type="text"],input[type="password"]{-webkit-appearance:none;appearance:non
 }
 .template {
     display: none;
+}
+
+.icon-loading1 {
+    width:20px;
+    height:20px;
+    display:inline-block;
+	-webkit-transform:rotate(0deg) translateZ(0);
+	-webkit-transition-duration:0ms;
+
+	-webkit-animation-name:loading;
+	-webkit-animation-duration:2s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+	from { -webkit-transform:rotate(0deg) translateZ(0); }
+	to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+
+.pullDown, .pullUp {
+    position: absolute;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    color: #808080;
+    width: 100%;
+    text-align: center;
+}
+
+.pullDown {
+    top: -35px;
+}
+
+.pullUp {
+    bottom: -30px;
+}
+
+.pullDown.loading, .pullUp.loading {
+    position: static;
+}
+
+.app .list>div.unPosedTip {
+    text-align: center;
+    display: block;
+}
+
+.link {
+    color: #ff4343;
 }
