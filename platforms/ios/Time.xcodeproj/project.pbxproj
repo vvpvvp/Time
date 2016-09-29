@@ -572,10 +572,12 @@
 				GCC_PREFIX_HEADER = "Time/Time-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = "Time/Time-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = Time;
-				PROVISIONING_PROFILE = "a84b2149-9b9a-4587-be2a-094509780425";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -594,9 +596,11 @@
 				GCC_PREFIX_HEADER = "Time/Time-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				GENERATE_PROFILING_CODE = YES;
 				INFOPLIST_FILE = "Time/Time-Info.plist";
 				PRODUCT_NAME = Time;
-				PROVISIONING_PROFILE = "a84b2149-9b9a-4587-be2a-094509780425";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

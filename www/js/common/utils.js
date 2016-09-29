@@ -48,6 +48,34 @@ var Utils = {
         }
         return o;
     },
+    getShowTime:function(m){
+        var n = moment();
+        var d_mi = n.distance(m,moment.MINUTE);
+        var d_y = n.distance(m,moment.YEAR);
+        var d_m = n.distance(m,moment.MONTH);
+        var d_d = n.distance(m,moment.DAY);
+        var d_h = n.distance(m,moment.HOUR);
+        var s = "",v = "";
+        if(d_y>0){
+            s = d_y +"年前";
+            v = m.format("YY-MM-DD hh:mm");
+        }else if(d_m>0){
+            s = d_y +"个月前";
+            v = m.format("M-DD hh:mm");
+        }else if(d_d>0){
+            s = d_d +"天前";
+            v = m.format("M-DD hh:mm");
+        }else if(d_h>0){
+            s = d_h +"小时前";
+            v = m.format("M-DD hh:mm");
+        }else if(d_mi>0){
+            s = d_mi +"分钟前";
+            v = m.format("hh:mm");
+        }else{
+            s = "刚刚";
+        }
+        return {s:s,v:v};
+    },
     mergeArray: function(arr1, arr2) {
         for (var i = 0; i < arr1.length; i++) {
             for (var j = 0; j < arr2.length; j++) {

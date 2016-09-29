@@ -47,6 +47,9 @@ var Op = {
             targetWidth:768, //图片输出宽度
             targetHeight:1280 //图片输出高度
         });
+    },
+    preview:function(images,index){
+        previewPage.init(images,index);
     }
 };
 
@@ -58,6 +61,8 @@ var menuControl = function(param){
             var p = param[i];
             if(p.op&&p.trigger){
                 html += "<div>"+p.op+"</div>";
+            }else{
+                html += "<div class='message'>"+p.message+"</div>";
             }
         }
     }
@@ -70,7 +75,10 @@ var menuControl = function(param){
     m.on("click",function(event){
         if(!m.is(event.target)){
             var _target = $(event.target);
-            param[_target.index()].trigger.call(null);
+            var tr = param[_target.index()].trigger;
+            if(tr){
+                tr.call(null);
+            }
         }
         close();
     });

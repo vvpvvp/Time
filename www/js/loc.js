@@ -28,12 +28,44 @@ var Address = {
             if (D.from=="google") {
                 if (result.status == "OK") {
                     if(result.results.length>0){
-                        location = result.results[0].formatted_address;
+                        var r = result.results[0];
+                        // var types = ["country","administrative_area_level_1",]
+                        var from = [],address="";
+                        for(var i = r.address_components.length-1; i >= 0 ; i--){
+                            var a = r.address_components[i];
+                            if(a.types.indexOf("postal_code")!=-1){
+                                continue;
+                            }
+                            if(from.length<2&&i!=0){
+                                from.push(a.long_name);
+                            }
+                            if(i==0){
+                                address = a.long_name;
+                            }
+                        }
+                        from = from.join("·")+"·";
+                        location = {
+                            address:from+address,
+                            regeocode:r,
+                            from:from
+                        }
                     }
                 }
             }else{
                 if (result.status == 1) {
-                    location = result.regeocode.formatted_address
+                    var addressComponent = result.regeocode.addressComponent;
+                    var from = addressComponent.country+"·"+addressComponent.province+"·"+addressComponent.district+"·";
+
+                    var detail = addressComponent.neighborhood.name;
+                    if(addressComponent.neighborhood.name.length==0){
+                        detail = addressComponent.township;
+                    }
+
+                    location = {
+                        address:from+detail,
+                        regeocode:result.regeocode,
+                        from:from
+                    }
                 }
             }
             callback.call(null,location);

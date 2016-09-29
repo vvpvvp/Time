@@ -17,15 +17,16 @@ var Request = {
     getAddress:function(){
         var param = {};
         if(D.from=="google"){
-            param.latlng = D.geo.googleLocation;
+            param.latlng = D.geo.position.googleLocation;
             param.key = "AIzaSyDGhyoBqeg9Wa9VTNziyg7CwC02E18skTs";
             param.language = "zh-CN";
+            param.result_type = "intersection|country|locality|sublocality|neighborhood|premise|natural_feature|airport|point_of_interest"
             var url = "https://maps.googleapis.com/maps/api/geocode/json";
             console.log(url);
             console.log($.param(param));
             return $.getJSON(url,param);
         }else{
-            param.location = D.geo.location;
+            param.location = D.geo.position.location;
             param.key = "1037b86d660b8e05b03d4a0a5fe8e1b5";
             param.radius = 500;
             param.types = "10|11|12|13|150500|150300|150200|150104|150106";
@@ -36,7 +37,7 @@ var Request = {
     getPOI:function(){
         var param = {};
         if(D.from=="google"){
-            param.location = D.geo.googleLocation;
+            param.location = D.geo.position.googleLocation;
             param.key = "AIzaSyDGhyoBqeg9Wa9VTNziyg7CwC02E18skTs";
             param.types = "establishment";
             param.language = "zh-CN";
@@ -44,7 +45,7 @@ var Request = {
             var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
             return $.getJSON(url,param);
         }else{
-            param.location = D.geo.location;
+            param.location = D.geo.position.location;
             param.key = "1037b86d660b8e05b03d4a0a5fe8e1b5";
             param.radius = 500;
             param.types = "10|11|12|13|150500|150300|150200|150104|150106";

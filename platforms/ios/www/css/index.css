@@ -23,6 +23,7 @@ div{
     bottom: 0;
     right: 0;
     overflow-y: auto;
+    z-index: 11;
     /* padding-top: 20px; */
 }
 
@@ -50,13 +51,14 @@ h1 {
 
 
 .app .list {
-    padding: 20px 10px 10px;
+    padding: 40px 0px 10px;
     /* margin: 50px 0; */
 }
 
 .app .list>div {
-    padding: 0 0 20px 0;
-    display: flex;
+    padding: 10px 10px;
+    border-bottom: 1px solid #EEE;
+    line-height: 20px;
 }
 
 .app .calarder {
@@ -68,8 +70,8 @@ h1 {
 }
 
 .images {
-    width: 60px;
-    height: 60px;
+    width: 81px;
+    height: 81px;
     text-align: center;
     overflow: hidden;
 }
@@ -98,13 +100,10 @@ h1 {
     flex-direction: column;
 }
 .app .desc {
-    height: 16px;
     color: #ababab;
 }
 
-.app .word {
-    flex: 1;
-}
+.app .word {font-size: 13px;}
 
 .section {
     background: #FFF;
@@ -133,15 +132,13 @@ h1 {
     border: none;
 }
 
-.app .images {
-    /* background-color: #EEE; */
-}
+.app .images {margin-right: 10px;margin-bottom: 10px;background-size: contain;}
 
 .section.show{
     top: 0;
 }
 
-.section .banner span {
+.section .banner>span {
     display: inline-block;
     padding: 10px;
 }
@@ -302,6 +299,7 @@ input[type="text"],input[type="password"]{-webkit-appearance:none;appearance:non
     transform: scaleY(0);
     transform-origin: bottom;
     transition: 0.3s;
+    background: #ececec;
 }
 
 .menuControl.fullscream.show>div {
@@ -344,7 +342,7 @@ input[type="text"],input[type="password"]{-webkit-appearance:none;appearance:non
 }
 
 .pullUp {
-    bottom: -30px;
+    bottom: -35px;
 }
 
 .pullDown.loading, .pullUp.loading {
@@ -358,4 +356,113 @@ input[type="text"],input[type="password"]{-webkit-appearance:none;appearance:non
 
 .link {
     color: #ff4343;
+}
+.menuControl.fullscream>div>div.message {
+    /* background: transparent; */
+    color: #909090;
+    font-size: 13px;
+    margin-bottom: 1px;
+}
+
+.audioControl {
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    left: 0;
+    right: 0;
+    margin: -50px auto;
+    font-size: 50px;
+}
+
+.audioControl span.icon-pause {
+    display: none;
+}
+
+.audioControl.play span.icon-pause {
+    display: block;
+}
+
+.audioControl.play span.icon-play {
+    display: none;
+}
+
+.createButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f13b41;
+    color: #FFF;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px 0 #c77272;
+}
+
+.createButton:active {
+    color: #FFF;
+}
+.gray {
+    color: gray;
+}
+
+.font15 {
+    font-size: 15px;
+}
+
+.font13 {
+    font-size: 13px;
+}
+
+.app .imgContainer {
+    display: flex;
+    margin: 10px 0 0;
+    flex-wrap: wrap;
+}
+
+.app .images.audio {
+    font-size: 40px;
+    background: #c3c3c3;
+    color: #FFF;
+    padding-top: 18px;
+    box-sizing: border-box;
+}
+
+.app .images:nth-child(4n) {
+    margin-right: 0;
+}
+
+.previewAllSection .bottomContent {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    left: 0;
+    right: 0;
+    background-color: rgba(101, 100, 100, 0.68);
+    z-index: 10;
+}
+
+.previewAllSection.show {
+    background-color: #000;
+    color: #FFF;
+}
+
+.section .banner span.title {
+    position: absolute;
+    font-size: 14px;
+    padding: 15px 0 0;
+    right: 50px;
+    left: 50px;
+    text-align: center;
+}
+
+.previewSection.show {
+    background: #000;
+    color: #FFF;
+}
+
+.previewAllSection .swiper-slide.empty{
+    padding: 20px;
+    font-size: 14px;
+    box-sizing: border-box;
 }

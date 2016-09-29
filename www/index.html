@@ -9,6 +9,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
     <link rel="stylesheet" type="text/css" href="css/font.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.css" />
     <title>Time</title>
 </head>
 
@@ -70,26 +71,20 @@
                 <span class="icon-loading1"></span>
             </div>
             <div class="list">
-                <div class="createButton">
-                    <div class="calarder">
-                        <div class="date">今天</div>
-                    </div>
-                    <div class="images empty add"><span class="icon-add-2"></span></div>
-                    <div class="content">
-                        <div class="word"></div>
-                        <div class="desc"></div>
-                    </div>
-                </div>
             </div>
             <div class="pullUp">
                 <span class="icon-loading1"></span>
             </div>
         </div>
+        <div class="createButton"><span class="icon-add-2"></span></div>
     </div>
     <div class="create section fullscream template">
         <div class="banner"><span class="cancelCreate">取消</span><span class="create" id="send">发送</span></div>
         <textarea name="content" id="" cols="30" rows="10" placeholder="这一刻的想法..."></textarea>
         <div class="img-picker">
+            <!-- <div class="images"><div class="audio icon-mic" v-type="audio" src="http://7xpm14.com1.z0.glb.clouddn.com/FmdzHoHKrg61R_azF5Y4JYMv14Ma"></div></div>
+            <div class="images"><div class="img" v-type="img" style="background-image:url(http://7xpm14.com1.z0.glb.clouddn.com/FgShjwQG8x1BDUjuIo00ytBz3MCB?imageView2/1/w/200/h/200)" src="http://7xpm14.com1.z0.glb.clouddn.com/FgShjwQG8x1BDUjuIo00ytBz3MCB"></div></div>
+            <div class="images"><div class="img" v-type="img" style="background-image:url(http://7xpm14.com1.z0.glb.clouddn.com/FkohLPR86y6lvYPwLWSXvmmK-qPQ?imageView2/1/w/200/h/200)" src="http://7xpm14.com1.z0.glb.clouddn.com/FkohLPR86y6lvYPwLWSXvmmK-qPQ"></div></div> -->
             <div class="images empty takePicture"><div class="icon-plus2"></div></div>
         </div>
         <div class="location">
@@ -107,6 +102,27 @@
         <div class="locationList">
         </div>
     </div>
+    <div class="previewSection section fullscream template">
+        <div class="banner"><span class="cancelCreate">取消</span><span class="create deleteImg">删除</span></div>
+        <div class="swiper-container">
+            <div class="imgPreview swiper-wrapper">
+                
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <div class="previewAllSection section fullscream template">
+        <div class="banner"><span class="cancelCreate">取消</span><span class="title"></span></div>
+        <div class="swiper-container">
+            <div class="imgPreview swiper-wrapper">
+                
+            </div>
+        </div>
+        <div class="bottomContent">
+            <pre></pre>
+            <div class="font12"></div>
+        </div>
+    </div>
 
     <div class="globalLoadding"></div>
 
@@ -121,7 +137,8 @@
     <script type="text/javascript" src="js/request.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/plugin/iscroll.js"></script>
-    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script type='application/javascript' src='js/plugin/fastclick.js'></script>
+    <script type='application/javascript' src='js/plugin/swiper.min.js'></script>
     <script type="text/javascript">
         if(typeof(cordova)!=="undefined"){
             app.initialize();
