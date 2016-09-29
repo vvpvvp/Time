@@ -8,66 +8,66 @@
     },
     "installed_plugins": {
         "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.chun.time"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.chun.time"
+            "PACKAGE_NAME": "com.chun.Time"
         },
         "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.chun.Time"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.chun.Time"
         }
     },
