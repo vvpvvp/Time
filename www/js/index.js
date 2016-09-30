@@ -77,7 +77,7 @@ var MainPage = {
                 //     html += '<div class="images"><div class="img" style="background-image:url('+d.urls[0].src+')"></div></div>';
                 // }
                 html += '<div v-index="'+(_this.data.length+i)+'"><div class="word"><pre>'+d.content+'</pre></div><div class="imgContainer">';
-                // if(i%2==0){
+                // if(i%2==1){
                 //     d.urls = [
                 //         {src:"http://7xpm14.com1.z0.glb.clouddn.com/FmdzHoHKrg61R_azF5Y4JYMv14Ma",type:"audio"},
                 //         {src:"http://7xpm14.com1.z0.glb.clouddn.com/FgShjwQG8x1BDUjuIo00ytBz3MCB",type:"img"},
@@ -90,6 +90,7 @@ var MainPage = {
                 d.show = show;
                 for (var j = 0; j <d.urls.length; j++) {
                     var url = d.urls[j];
+                    var src = url.oldUrl||url.src;
                     if(url.type=="img"){
                         html += '<div class="images" v-index="'+j+'" v-type="img" style="background-image:url('+url.src+'?imageView2/1/w/200/h/200)" src="'+url.src+'"></div>';
                     }else{
@@ -107,6 +108,7 @@ var MainPage = {
             }
             _this.data = _this.data.concat(data);
             _this.loadding = false;
+
         });
     },
     initEvents(){
@@ -507,9 +509,10 @@ var previewAllPage = {
         var isInit = index==0;
         var setNow = function(m){
             var nowPosition = _this.getNextPosition(i,j,m);
+            if(!nowPosition)return false;
             i = nowPosition.i;j = nowPosition.j;
             var data = MainPage.data[i];
-            // log(data);
+            // console.log(data);
             $(".title",_this.content).html('<span>'+moment(data.updateAt).format("kk")+'</span>');
             $(".bottomContent pre",_this.content).html(data.content);
             $(".bottomContent div",_this.content).html(data.address);
@@ -562,6 +565,7 @@ var previewAllPage = {
                 return false;
             }
             i--;
+            data = MainPage.data[i];
             j = data.urls.length-1;
         }else{
             j += direction;

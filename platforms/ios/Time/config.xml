@@ -52,9 +52,6 @@
     <feature name="Globalization">
         <param name="ios-package" value="CDVGlobalization" />
     </feature>
-    <feature name="ImagePicker">
-        <param name="ios-package" value="SOSPicker" />
-    </feature>
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
@@ -77,6 +74,9 @@
     </feature>
     <feature name="Vibration">
         <param name="ios-package" value="CDVVibration" />
+    </feature>
+    <feature name="ImagePicker">
+        <param name="ios-package" value="SOSPicker" />
     </feature>
     <name>Time</name>
     <description>Hello World sample application that responds to the deviceready event.</description>
@@ -120,6 +120,7 @@
     <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="true" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
@@ -133,6 +134,5 @@
     <preference name="CameraUsesGeolocation" value="false" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
 </widget>

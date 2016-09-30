@@ -3,13 +3,16 @@
  */
 
 body {
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    width:100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: 'Avenir Next',Avenir,'Helvetica Neue',Helvetica,'Lantinghei SC','Hiragino Sans GB','Microsoft YaHei',STHeiti,'WenQuanYi Micro Hei',SimSun,sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #090909;
+    font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -ms-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
     box-sizing: border-box;
 }
 div{
@@ -56,7 +59,7 @@ h1 {
 }
 
 .app .list>div {
-    padding: 10px 10px;
+    padding: 15px 10px;
     border-bottom: 1px solid #EEE;
     line-height: 20px;
 }
@@ -103,7 +106,7 @@ h1 {
     color: #ababab;
 }
 
-.app .word {font-size: 13px;}
+.app .word {font-size: 15px;}
 
 .section {
     background: #FFF;
@@ -438,7 +441,7 @@ input[type="text"],input[type="password"]{-webkit-appearance:none;appearance:non
     padding: 10px;
     left: 0;
     right: 0;
-    background-color: rgba(101, 100, 100, 0.68);
+    background-color: rgba(0, 0, 0, 0.45);
     z-index: 10;
 }
 
@@ -465,4 +468,24 @@ input[type="text"],input[type="password"]{-webkit-appearance:none;appearance:non
     padding: 20px;
     font-size: 14px;
     box-sizing: border-box;
+}
+
+pre {
+    font-family: inherit;
+    margin: 0;
+    white-space: pre-wrap;
+}
+.app .header {
+    position: absolute;
+    height: 45px;
+    left: 0;
+    background: #f13b41;
+    z-index: 1;
+    right: 0;
+    text-align: center;
+    line-height: 45px;
+    font-size: 26px;
+    padding-left: 10px;
+    color: #FFF;
+    font-family: monospace;
 }
