@@ -221,6 +221,9 @@ var previewAllPage = {
                     if (!p) {
                         return true;
                     }
+                    if(i>=MainPage.data.length-2){
+                        MainPage.loadData();
+                    }
                     console.log("appendRight");
                     s.appendSlide(p);
                 }
